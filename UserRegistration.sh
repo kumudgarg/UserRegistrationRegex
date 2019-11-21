@@ -56,7 +56,7 @@ function PasswordRegex()
 {
         echo "Enter your Password"
         read password
-        pat="^([A-Z]+.*)+|^(.*[A-Z]+)+|^(.*[A-Z]+.*)+"
+        pat="^([A-Z0-9]+.*)+|^(.*[A-Z0-9]+)+|^(.*[A-Z0-9]+.*)+"
         if [[ $password =~ $pat ]] && [[ ${#password} -ge 8 ]]
         then
                 echo "valid";
