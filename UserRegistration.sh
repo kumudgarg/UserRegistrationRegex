@@ -26,6 +26,19 @@ function lastNameRegex()
         fi
 
 }
+function EmailRegex()
+{
+        echo "Enter your Email Id"
+        read email
+        pat="^[0-9a-zA-Z]+([._+,-]?[0-9a-zA-Z]+)?[@][a-zA-Z]+[.][a-zA-Z]{2,4}([.]?[a-zA-Z]{2})?$"
+        if [[ $email =~ $pat ]]
+        then
+                echo "valid : email id";
+        else
+                echo "invalid : email id"
+        fi
 
+}
 #firstNameRegex
-lastNameRegex
+#lastNameRegex
+EmailRegex
