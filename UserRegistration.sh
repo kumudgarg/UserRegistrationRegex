@@ -52,8 +52,23 @@ function mobileRegex()
         fi
 
 }
+function PasswordRegex()
+{
+        echo "Enter your Password"
+        read password
+        pat="^[0-9a-zA-Z]{8,}$"
+        if [[ $password =~ $pat ]]
+        then
+                echo "valid";
+        else
+                echo "invalid :  should be have min 8 characters"
+        fi
+
+}
+
 
 #firstNameRegex
 #lastNameRegex
 #EmailRegex
-mobileRegex
+#mobileRegex
+PasswordRegex
