@@ -1,5 +1,5 @@
 #!/bin/bash -x
-shopt -s extglob
+#shopt -s extglob
 function firstNameRegex()
 {
 	echo "Enter your First Name"
@@ -43,7 +43,7 @@ function mobileRegex()
 {
         echo "Enter your mobile number"
         read mobileNumber
-        pat="^[0-9]{2}[ ][0-9]{10}$"
+        pat="[0-9]{2}[ ][0-9]{10}$"
         if [[ $mobileNumber =~ $pat ]]
         then
                 echo "valid :- eg : 91 9989757750";
@@ -52,8 +52,21 @@ function mobileRegex()
         fi
 
 }
+function PasswordRegex()
+{
+        echo "Enter your Password"
+        read password
+        pat="^([A-Z]+.*)+|^(.*[A-Z]+)+|^(.*[A-Z]+.*)+"
+        if [[ $password =~ $pat ]] && [[ ${#password} -ge 8 ]]
+        then
+                echo "valid";
+        else
+                echo "invalid :  should be have min 8 characters"
+        fi
 
+}
 #firstNameRegex
 #lastNameRegex
 #EmailRegex
-mobileRegex
+#mobileRegex
+PasswordRegex
