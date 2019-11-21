@@ -39,6 +39,21 @@ function EmailRegex()
         fi
 
 }
+function mobileRegex()
+{
+        echo "Enter your mobile number"
+        read mobileNumber
+        pat="^[0-9]{2}[ ][0-9]{10}$"
+        if [[ $mobileNumber =~ $pat ]]
+        then
+                echo "valid :- eg : 91 9989757750";
+        else
+                echo "invalid : start with country code followed by space and 10 digit number"
+        fi
+
+}
+
 #firstNameRegex
 #lastNameRegex
-EmailRegex
+#EmailRegex
+mobileRegex
